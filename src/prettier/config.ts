@@ -1,7 +1,7 @@
-import { SortImportsPlugin } from "../constants";
-import { PrettierConfig, SortImportsConfig, assertDeps } from "../utils";
+import { SortImportsPlugin } from '../constants'
+import { PrettierConfig, SortImportsConfig, assertDeps } from '../utils'
 
-import { orderDefault } from "./importOrders";
+import { orderDefault } from './importOrders'
 
 /*  "bracketSpacing": true,
   "tabWidth": 2,
@@ -16,16 +16,16 @@ export function config() {
     semi: false,
     singleQuote: true,
     printWidth: 120,
-    trailingComma: "none",
-  } satisfies PrettierConfig;
+    trailingComma: 'none'
+  } satisfies PrettierConfig
 }
 
 interface WithSortImportsOptions {
-  importOrder?: string[];
+  importOrder?: string[]
 }
 
 export function withSortImports({ importOrder }: WithSortImportsOptions = {}) {
-  assertDeps([SortImportsPlugin]);
+  assertDeps([SortImportsPlugin])
 
   return {
     ...config(),
@@ -33,21 +33,21 @@ export function withSortImports({ importOrder }: WithSortImportsOptions = {}) {
     importOrder: importOrder ?? orderDefault,
     importOrderSeparation: true,
     importOrderSortSpecifiers: true,
-    importOrderParserPlugins: ["typescript", "decorators-legacy", "jsx"],
-  } satisfies SortImportsConfig;
+    importOrderParserPlugins: ['typescript', 'decorators-legacy', 'jsx']
+  } satisfies SortImportsConfig
 }
 
 /**
  * Sort Imports + TailwindCSS
  */
 export function withTailwind(opts?: WithSortImportsOptions) {
-  assertDeps([SortImportsPlugin, "prettier-plugin-tailwindcss"]);
+  assertDeps([SortImportsPlugin, 'prettier-plugin-tailwindcss'])
 
-  const base = withSortImports(opts);
+  const base = withSortImports(opts)
 
   return {
     ...base,
-    plugins: [SortImportsPlugin, "prettier-plugin-tailwindcss"],
-    pluginSearchDirs: false,
-  } satisfies SortImportsConfig;
+    plugins: [SortImportsPlugin, 'prettier-plugin-tailwindcss'],
+    pluginSearchDirs: false
+  } satisfies SortImportsConfig
 }

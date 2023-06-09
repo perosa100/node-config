@@ -1,1 +1,1 @@
-export const SortImportsPlugin = "@trivago/prettier-plugin-sort-imports";
+export const SortImportsPlugin = '@trivago/prettier-plugin-sort-imports'
