@@ -1,0 +1,104 @@
+{
+  "name": "@perosa100/config",
+  "description": "My personal config for node projects, include ESLint Prettier and TSConfig",
+  "version": "0.20.0",
+  "license": "MIT",
+  "author": {
+    "name": "Patrick Perosa",
+    "url": "https://github.com/perosa100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perosa100/node-config"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "eslint-config",
+    "prettier-config",
+    "tsconfig"
+  ],
+  "exports": {
+    "./eslint": "./dist/eslint.js",
+    "./prettier": "./dist/prettier/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "eslint": [
+        "./dist/eslint.d.ts"
+      ],
+      "prettier": [
+        "./dist/prettier/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src",
+    "format": "eslint src --fix",
+    "prepack": "rm -rf dist && pnpm build && pnpm lint",
+    "lint-strict": "eslint src --max-warnings=0",
+    "sync": "node tools/syncPeerDeps.mjs"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/eslint": "^8.21.2",
+    "@types/node": "^18.15.3",
+    "@types/prettier": "^2.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-next": "^13.2.4",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.5",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/eslint": "^8.21.2",
+    "@types/node": "^18.15.3",
+    "@types/prettier": "^2.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-next": "^13.2.4",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.5",
+    "typescript": "^5.0.2"
+  },
+  "peerDependenciesMeta": {
+    "@trivago/prettier-plugin-sort-imports": {
+      "optional": true
+    },
+    "eslint-config-next": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
+  }
+}
