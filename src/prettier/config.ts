@@ -3,14 +3,20 @@ import { PrettierConfig, SortImportsConfig, assertDeps } from "../utils";
 
 import { orderDefault } from "./importOrders";
 
+/*  "bracketSpacing": true,
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 110,
+  "trailingComma": "none" */
 export function config() {
   return {
     bracketSpacing: true,
     tabWidth: 2,
-    useTabs: false,
-    singleQuote: false,
-    semi: true,
-    printWidth: 80,
+    semi: false,
+    singleQuote: true,
+    printWidth: 120,
+    trailingComma: "none",
   } satisfies PrettierConfig;
 }
 
