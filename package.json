@@ -1,7 +1,7 @@
 {
   "name": "@perosa100/config",
   "description": "My personal config for node projects, include ESLint Prettier and TSConfig",
-  "version": "0.20.0",
+  "version": "0.30.0",
   "license": "MIT",
   "author": {
     "name": "Patrick Perosa",
