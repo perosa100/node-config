@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Publish Release
-        uses: Leomotors/auto-publish-release@main
+        uses: perosa100/auto-publish-release@main
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          title: "@leomotors/config"
+          title: "@perosa100/config"
           tag: ${{ github.ref }}
 
   npm:
