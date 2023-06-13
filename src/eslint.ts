@@ -4,7 +4,7 @@ export function config() {
   return {
     root: true,
     parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint/eslint-plugin', 'import', 'unused-imports', 'sort-destructure-keys'],
+    plugins: ['@typescript-eslint/eslint-plugin', 'import', 'sort-destructure-keys'],
     extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
     rules: {
       'prettier/prettier': 'warn',
@@ -19,19 +19,7 @@ export function config() {
           caughtErrorsIgnorePattern: '^_'
         }
       ],
-      '@typescript-eslint/no-empty-function': 'warn',
-      '@typescript-eslint/no-non-null-assertion': 'warn',
-      'sort-destructure-keys/sort-destructure-keys': 'warn',
-      'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': [
-        'warn',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_'
-        }
-      ]
+      'sort-destructure-keys/sort-destructure-keys': 'warn'
     },
     overrides: [
       {
