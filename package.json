@@ -39,7 +39,10 @@
     "format": "eslint src --fix",
     "prepack": "rm -rf dist && pnpm build && pnpm lint",
     "lint-strict": "eslint src --max-warnings=0",
-    "sync": "node tools/syncPeerDeps.mjs"
+    "sync": "node tools/syncPeerDeps.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && pnpm changeset publish"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
