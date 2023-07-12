@@ -9,7 +9,8 @@ const packageJson = JSON.parse(await fs.readFile(filePath, "utf-8"));
 let mutated = false;
 
 for (const dep of Object.keys(packageJson.peerDependencies)) {
-  const value = packageJson.dependencies?.[dep] || packageJson.devDependencies?.[dep]
+  const value =
+    packageJson.dependencies?.[dep] || packageJson.devDependencies?.[dep];
 
   if (value && packageJson.peerDependencies[dep] !== value) {
     packageJson.peerDependencies[dep] = value;

@@ -1,7 +1,7 @@
 {
   "name": "@perosa100/config",
   "description": "My personal config for node projects, include ESLint Prettier and TSConfig",
-  "version": "0.45.0",
+  "version": "0.50.0",
   "license": "MIT",
   "author": {
     "name": "Patrick Perosa",
@@ -10,8 +10,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/perosa100/node-config"
-  },
-  "publishConfig": {
+  },  "publishConfig": {
     "access": "public"
   },
   "keywords": [
@@ -39,10 +38,7 @@
     "format": "eslint src --fix",
     "prepack": "rm -rf dist && pnpm build && pnpm lint",
     "lint-strict": "eslint src --max-warnings=0",
-    "sync": "node tools/syncPeerDeps.mjs",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "pnpm build && pnpm changeset publish"
+    "sync": "node tools/syncPeerDeps.mjs"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
