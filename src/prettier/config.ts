@@ -10,6 +10,7 @@ export function config() {
     semi: false,
     singleQuote: true,
     printWidth: 120,
+    endOfLine: 'lf',
     arrowParens: 'always',
     trailingComma: 'none'
   } satisfies PrettierConfig
@@ -33,16 +34,16 @@ export function withSortImports({ importOrder }: WithSortImportsOptions = {}) {
 }
 
 /**
- * Sort Imports + TailwindCSS
+ * Sort Imports + withStitches
  */
-export function withTailwind(opts?: WithSortImportsOptions) {
-  assertDeps([SortImportsPlugin, 'prettier-plugin-tailwindcss'])
+export function withStitches(opts?: WithSortImportsOptions) {
+  assertDeps([SortImportsPlugin /* , 'prettier-plugin-tailwindcss' */])
 
   const base = withSortImports(opts)
 
   return {
     ...base,
-    plugins: [SortImportsPlugin, 'prettier-plugin-tailwindcss'],
+    plugins: [SortImportsPlugin /* , 'prettier-plugin-tailwindcss' */],
     pluginSearchDirs: false
   } satisfies SortImportsConfig
 }
